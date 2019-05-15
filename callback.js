@@ -28,27 +28,26 @@ console.log("Running some more code");
 
 // Promises
 
-function addWithPromise(c, d, ) {
-    const total = c + d;
+function addWithPromise(y, z) {
+    const total = y + z;
     return total
 }
 
 
-let promise = new Promise(function(resolve, reject) {
-    setTimeout(() => resolve(addWithPromise(20, 30)), 10);
-
+var promise = new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(addWithPromise(20, 30)), 20);
 });
 
 promise.then(
-    result => console.log(`Promise successful here is the total ${result}`),
+    result => console.log(`Promise total amount is: ${result}`),
     error => console.log(error)
 );
 
-let promise1 = new Promise(function(resolve, reject) {
-    setTimeout(() => resolve(addWithPromise(30, 30)), 0);
+var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(addWithPromise(0, 30)), 0);
 })
 
 promise1.then(
-    result => console.log(`Promise successful here is the total ${result}`),
+    result => console.log(`Promise (2nd) total amount is: ${result}`),
     error => console.log(error)
 )
